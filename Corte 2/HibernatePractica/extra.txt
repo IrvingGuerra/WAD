@@ -1,0 +1,29 @@
+Usuario user = new Usuario();
+            user.setNombre(request.getParameter("nombre"));
+            user.setApellidoP(request.getParameter("apellido_p"));
+            user.setApellidoM(request.getParameter("apellido_m"));
+            user.setCorreo(request.getParameter("correo"));
+            user.setPassword(request.getParameter("password"));  
+            registerUser(user);
+
+
+
+
+///Method
+
+public String obtenerCorreo(int id){
+        SessionFactory sf= null;
+        Session sesion = null;
+        Transaction tx = null;
+
+        sf = HibernateUtil.getSessionFactory();
+        sesion = sf.openSession();
+        Usuario user = (Usuario)sesion.get(Usuario.class, id);
+        sesion.close();
+        if(user != null){
+            return "Correo es: "+user.getCorreo();
+        }else{
+            return "El usuario no existe";
+        }
+        
+    }
