@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-nov-2018 12:53:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojo.IntercambioMix" table="intercambio_mix" catalog="idevucom_web_aplication_dev" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="idIntercambio" type="int">
+            <column name="id_intercambio" not-null="true" />
+        </property>
+        <property name="random" type="string">
+            <column name="random" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <!--<bean class="controller.registroController" id="registroController" />-->
+    <bean class="controller.CuentaController" id="CuentaController" />
+    <bean class="controller.IntercambioController" id="IntercambioController" />
+    <bean class="controller.CrearController" id="CrearController" />
+    <bean class="controller.InvitacionesController" id="InvitacionesController" />
+    <bean class="controller.BuscarController" id="BuscarController" />
+    <bean class="controller.IntercambioSController" id="IntercambioSController" />
+    <bean class="controller.VerInvitacionesController" id="VerInvitacionesController" />
+    <bean class="controller.SendInvitacionController" id="SendInvitacionController" />
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="registro.htm">pageRegController</prop>
+                <prop key="login.htm">pageLogController</prop>
+                
+                <prop key="crearintercambios.htm">CrearController</prop>
+                <prop key="invitaciones.htm">InvitacionesController</prop>
+                <prop key="buscar.htm">BuscarController</prop>
+             
+                <prop key="micuenta.htm">CuentaController</prop>
+                <prop key="misintercambios.htm">IntercambioController</prop>
+                <prop key="statusIntercambio.htm">IntercambioSController</prop>
+                
+                <prop key="verInvitaciones.htm">VerInvitacionesController</prop>
+         
+                <prop key="sendInvitacion.htm">SendInvitacionController</prop>                     
+                
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    
+    <bean name="pageLogController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="login" />
+    
+    <bean name="pageRegController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="registro" />
+
+    
+</beans>

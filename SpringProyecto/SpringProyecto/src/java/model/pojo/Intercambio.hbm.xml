@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-nov-2018 12:53:22 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojo.Intercambio" table="intercambio" catalog="idevucom_web_aplication_dev" optimistic-lock="version">
+        <id name="idIntercambio" type="java.lang.Integer">
+            <column name="id_intercambio" />
+            <generator class="identity" />
+        </id>
+        <property name="idAdmin" type="int">
+            <column name="id_admin" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" not-null="true" />
+        </property>
+        <property name="costo" type="string">
+            <column name="costo" not-null="true" />
+        </property>
+        <property name="dateA" type="string">
+            <column name="date_a" not-null="true" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" not-null="true" />
+        </property>
+        <property name="comentarios" type="string">
+            <column name="comentarios" not-null="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
