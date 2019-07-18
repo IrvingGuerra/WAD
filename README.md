@@ -35,7 +35,7 @@ En este repositorio se usaron las siguientes tecnologias.
 Se requiere [git](https://git-scm.com/) para ejecutar los siguientes comandos en consola:
 
 ```sh
-$ git clone https://github.com/IrvingGuerra//Web-Application-Development
+$ git clone https://github.com/IrvingGuerra/Web-Application-Development
 ```
 
 ### Contacto
